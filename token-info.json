@@ -1,0 +1,22 @@
+{
+  "name": "FALAHX",
+  "symbol": "FLX",
+  "decimals": 18,
+  "totalSupply": 10000000,
+  "chain": "BNB Chain",
+  "contractType": "BEP-20",
+  "tokenomics": {
+    "liquidity": "37.5%",
+    "marketing": "25%",
+    "team": "15% (locked)",
+    "reserves": "12.5%",
+    "burned": "10%"
+  },
+  "features": [
+    "Auto-Burn",
+    "Anti-Whale",
+    "Bot Protection",
+    "Cooldown",
+    "Fair Launch"
+  ]
+}
