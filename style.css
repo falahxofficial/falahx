@@ -58,3 +58,9 @@ footer {
   padding: 2em;
   background: #111;
 }
+.logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  margin: 10px auto;
+}
