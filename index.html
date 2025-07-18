@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FALAHX — Ethical Crypto on BNB Chain</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <img src="assets/logo/logo.png" alt="FALAHX Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="animate">FALAHX</h1>
+    <p class="hero-sub">The Future of Ethical DeFi</p>
+    <div class="cta-buttons">
+      <a href="https://pancakeswap.finance" class="btn">Buy Now</a>
+      <button onclick="connectWallet()" class="btn secondary">Connect Wallet</button>
+    </div>
+  </section>
+
+  <section id="about" class="section fade-in">
+    <h2>About FALAHX</h2>
+    <p>FALAHX is a purpose-driven BEP-20 token on BNB Chain, designed for fairness and lasting value.</p>
+  </section>
+
+  <section id="features" class="section fade-in">
+    <h2>Key Features</h2>
+    <ul>
+      <li>🛡️ Proof of Work Security</li>
+      <li>🔥 Auto-Burn Mechanism</li>
+      <li>🐋 Anti-Whale & Cooldown</li>
+      <li>💸 Fair Buy/Sell Taxes</li>
+      <li>🤖 Bot Protection</li>
+      <li>⚙️ Editable Tax Limits</li>
+    </ul>
+  </section>
+
+  <section id="tokenomics" class="section fade-in">
+    <h2>Tokenomics</h2>
+    <canvas id="tokenChart" width="300" height="300"></canvas>
+    <ul>
+      <li>Total Supply: 10,000,000</li>
+      <li>37.5% Liquidity</li>
+      <li>25% Marketing</li>
+      <li>15% Team (Locked)</li>
+      <li>12.5% Reserves</li>
+      <li>10% Burn</li>
+    </ul>
+  </section>
+
+  <section id="roadmap" class="section fade-in">
+    <h2>Roadmap</h2>
+    <ol>
+      <li>Launch</li>
+      <li>Community Building</li>
+      <li>Listings</li>
+      <li>Web3 Expansion</li>
+    </ol>
+  </section>
+
+  <section id="team" class="section fade-in">
+    <h2>Team</h2>
+    <p>CryptoShark — Founder</p>
+    <p>CodeMaster — Developer</p>
+    <p>HypeGuru — Marketing</p>
+  </section>
+
+  <section id="faq" class="section fade-in">
+    <h2>FAQ</h2>
+    <p><strong>Q:</strong> What makes FALAHX different?</p>
+    <p><strong>A:</strong> It's built on trust, fairness, and long-term value.</p>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2>Contact</h2>
+    <p>Email: contact@falahx.io | Telegram: @falahx</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FALAHX. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const data = {
+      labels: ["Liquidity", "Marketing", "Team", "Reserves", "Burn"],
+      datasets: [{
+        data: [37.5, 25, 15, 12.5, 10],
+        backgroundColor: ["#00e0a0", "#ffce56", "#36a2eb", "#e84a5f", "#666"]
+      }]
+    };
+    new Chart(document.getElementById("tokenChart"), {
+      type: "pie",
+      data: data
+    });
+
+    async function connectWallet() {
+      if (window.ethereum) {
+        try {
+          const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+          alert("Connected: " + accounts[0]);
+        } catch (e) {
+          alert("Connection rejected.");
+        }
+      } else {
+        alert("Install MetaMask first.");
+      }
+    }
+  </script>
+</body>
+</html>
