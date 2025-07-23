@@ -2,106 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content='width=device-width, initial-scale=1.0' />
-  <meta name="description" content="FALAHX is a decentralized, ethical cryptocurrency on the BNB Chain with anti-whale, auto-burn, and community-focused governance.">
-  <meta property="og:title" content="FALAHX — Ethical Crypto on BNB Chain">
-  <meta property="og:description" content="Join the future of honest DeFi with FALAHX, a BEP-20 token with smart features to protect and empower investors.">
-  <meta property="og:image" content="assets/logo/logo.png">
-  <title>FALAHX — Ethical Crypto on BNB Chain</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FALAHX – Ethical DeFi Token</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header, footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #00bcd4;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #00bcd4;
+    }
+    .hero {
+      background: linear-gradient(135deg, #000000, #001f3f);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #00bcd4;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .tokenomics ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tokenomics li {
+      margin: 10px 0;
+    }
+    footer p, footer a {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header class="sticky">
-    <img src="assets/logo/logo.png" alt="FALAHX Logo" class="logo" />
+  <header>
+    <h1>FALAHX Logo</h1>
     <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#tokenomics">Tokenomics</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#team">Team</a>
+      <a href="#blog">Blog</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- ✅ HERO SECTION WITH VIDEO BACKGROUND -->
-  <section id="hero" class="hero-section">
-    <video autoplay muted loop class="hero-bg">
-      <source src="assets/media/hero-bg.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-content">
-      <h1 class="glow">FALAHX</h1>
-      <p class="tagline">The Future of Ethical, Community-Powered DeFi</p>
-      <a href="https://pancakeswap.finance" class="btn">Buy Now</a>
-      <button class="btn secondary" onclick="connectWallet()">Connect Wallet</button>
-      <a href="whitepaper.pdf" class="btn secondary">View Whitepaper</a>
+  <section class="hero" id="home">
+    <h1>FALAHX</h1>
+    <p>The Future of Ethical, Community-Powered DeFi</p>
+    <div class="buttons">
+      <a href="#">Buy Now</a>
+      <a href="#">Connect Wallet</a>
+      <a href="#">View Whitepaper</a>
+      <a href="#">Live Price Chart</a>
     </div>
   </section>
 
-  <!-- ✅ LIVE PRICE CHART -->
-  <section id="live" class="section fade-in">
-    <h2>Live Price Chart</h2>
-    <iframe src="https://dexscreener.com/bsc/0x0000000000000000000000000000000000000000?embed=1&theme=dark"
-      style="width:100%; height:500px; border:none; border-radius:12px;"></iframe>
+  <section id="about">
+    <h2>About FALAHX</h2>
+    <p>FALAHX is a purpose-driven DeFi token built on the principles of fairness, transparency, and ethics. We're building a financial future where communities have power and protection against manipulation, bot attacks, and whale dominance. With advanced smart contract mechanics and a strong focus on long-term sustainability, FALAHX is a revolution in ethical crypto investing.</p>
   </section>
 
-  <!-- ✅ TOKENOMICS SECTION -->
-  <section id="tokenomics" class="section fade-in">
+  <section id="tokenomics" class="tokenomics">
     <h2>Tokenomics</h2>
-    <canvas id="tokenChart" width="300" height="300"></canvas>
     <ul>
-      <li>🔒 37.5% Liquidity (Locked)</li>
-      <li>📣 25% Marketing</li>
-      <li>👥 15% Team (Locked)</li>
-      <li>🌱 12.5% Reserves</li>
-      <li>🔥 10% Burned</li>
+      <li>🔒 <strong>37.5% Liquidity (Locked):</strong> Ensures trading stability and trust.</li>
+      <li>📣 <strong>25% Marketing:</strong> Fuels global promotion and partnerships.</li>
+      <li>👥 <strong>15% Team (Locked):</strong> Reserved with vesting to align long-term goals.</li>
+      <li>🌱 <strong>12.5% Reserves:</strong> For future development and rewards.</li>
+      <li>🔥 <strong>10% Burned:</strong> Permanently removed to increase scarcity and value.</li>
     </ul>
-    <a href="token-info.json" class="btn secondary">Download Token Info</a>
+    <p><a href="#">Download Token Info</a></p>
   </section>
 
-  <!-- ✅ CONTACT SECTION -->
-  <section id="contact" class="section fade-in">
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <p><strong>Phase 1 – Foundation:</strong> Token launch, website, audit, and community setup.<br />
+       <strong>Phase 2 – Launch & Liquidity:</strong> Trading live, locked LP, marketing roll-out.<br />
+       <strong>Phase 3 – Growth & Utility:</strong> Platform partnerships, staking, audit.<br />
+       <strong>Phase 4 – Expansion:</strong> CEX listings, mobile app, charity collabs.</p>
+  </section>
+
+  <section id="team">
+    <h2>Team</h2>
+    <p>Our team is made up of experienced developers, DeFi strategists, and community leaders. After security verification and audits, our core team will go public. We value transparency and ethical leadership above all.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Stay informed with news, updates, and insights from the FALAHX team. First post coming soon: <strong>"Why FALAHX is More Than a Meme"</strong>.</p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <p><strong>What is FALAHX?</strong><br />A BEP-20 token with anti-dump, cooldown, and burn mechanisms.<br /><br />
+       <strong>Is liquidity locked?</strong><br />Yes, using a trusted locker like PinkLock.<br /><br />
+       <strong>What are the taxes?</strong><br />Buy: 0.5%, Sell: 1%, Auto-Burn: 0.2% (adjustable).<br /><br />
+       <strong>Where can I buy?</strong><br />On PancakeSwap after launch.<br /><br />
+       <strong>How are whales and bots handled?</strong><br />Smart contract includes wallet/tx limits, cooldown, and bot protection.</p>
+  </section>
+
+  <section id="contact">
     <h2>Contact & Socials</h2>
-    <p>Email: contact@falahx.io</p>
-    <p>Telegram: <a href="https://t.me/falahx" target="_blank">@falahx</a></p>
-    <p>Twitter: <a href="https://twitter.com/falahx" target="_blank">@falahx</a></p>
-    <p>GitHub: <a href="https://github.com/hypratoken/falahx" target="_blank">falahx</a></p>
+    <p>Email: <a href="mailto:contact@falahx.io">contact@falahx.io</a><br />
+       Telegram: <a href="https://t.me/falahx">@falahx</a><br />
+       Twitter: <a href="https://twitter.com/falahx">@falahx</a><br />
+       GitHub: <a href="https://github.com/falahx">falahx</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 FALAHX. All rights reserved.</p>
   </footer>
-
-  <!-- ✅ JS: Chart + Wallet Connect -->
-  <script>
-    const chart = new Chart(document.getElementById("tokenChart"), {
-      type: "pie",
-      data: {
-        labels: ["Liquidity", "Marketing", "Team", "Reserves", "Burned"],
-        datasets: [{
-          data: [37.5, 25, 15, 12.5, 10],
-          backgroundColor: ["#00e0a0", "#ffce56", "#36a2eb", "#e84a5f", "#777"]
-        }]
-      }
-    });
-
-    async function connectWallet() {
-      if (window.ethereum) {
-        try {
-          const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-          alert("Wallet Connected: " + accounts[0]);
-        } catch (e) {
-          alert("Wallet connection rejected.");
-        }
-      } else {
-        alert("MetaMask not found. Please install it.");
-      }
-    }
-  </script>
 </body>
 </html>
