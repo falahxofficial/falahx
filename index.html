@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FALAHX – Ethical DeFi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/logo/logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FALAHX – Ethical DeFi Token</title>
+  <link rel="icon" href="assets/logo/logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #00e5ff;
       --dark: #0f0f0f;
-      --gray: #1a1a1a;
       --white: #ffffff;
     }
+
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--dark);
+      background-color: var(--dark);
       color: var(--white);
-      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
+
     header {
-      background-color: #111;
-      padding: 10px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: #111;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
+
     header img {
-      height: 70px;
+      height: 60px;
     }
+
     nav a {
       color: var(--primary);
       margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
     }
-    nav a:hover {
-      color: #fff;
-    }
+
     .hero {
       position: relative;
       height: 100vh;
@@ -55,92 +58,63 @@
       align-items: center;
       text-align: center;
     }
+
     .hero video {
       position: absolute;
-      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: 0;
       filter: brightness(0.3);
     }
+
     .hero .content {
       position: relative;
       z-index: 2;
-      color: #fff;
       padding: 20px;
+      color: white;
     }
+
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       color: var(--primary);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
+
     .hero p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 30px;
     }
+
     .btn {
-      background: var(--primary);
-      color: #000;
-      padding: 12px 24px;
+      padding: 12px 25px;
       border: none;
-      border-radius: 30px;
-      margin: 10px;
+      border-radius: 25px;
+      background: var(--primary);
+      color: black;
       font-weight: 600;
-      cursor: pointer;
       text-decoration: none;
-      transition: background 0.3s;
+      margin: 5px;
+      transition: 0.3s;
+      display: inline-block;
     }
+
     .btn:hover {
-      background: #fff;
-      color: #000;
+      background: white;
+      color: black;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--primary);
-      text-align: center;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #222;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-    .faq-item {
-      background: #1a1a1a;
-      margin-bottom: 10px;
-      border-radius: 8px;
-    }
-    .faq-q {
-      padding: 15px;
-      background: #222;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      padding: 0 15px;
-    }
-    .faq-q:hover { background: #333; }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #111;
-      color: #aaa;
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -151,105 +125,23 @@
       <a href="#about">About</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#roadmap">Roadmap</a>
-      <a href="#team">Team</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <video autoplay muted loop playsinline>
-      <source src="assets/media/hero-bg.mp4" type="video/mp4">
+      <source src="assets/media/test-video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div class="content">
       <h1>FALAHX</h1>
       <p>The Future of Ethical, Community-Powered DeFi</p>
-      <a class="btn" href="#">Buy Now</a>
-      <a class="btn" href="#" onclick="connectWallet()">Connect Wallet</a>
-      <a class="btn" href="#">Whitepaper</a>
-      <a class="btn" href="https://www.dextools.io/app/en/bnb/pair-explorer">Live Chart</a>
+      <a href="#" class="btn">Buy Now</a>
+      <a href="#" class="btn">Connect Wallet</a>
+      <a href="#" class="btn">Whitepaper</a>
+      <a href="#" class="btn">Live Chart</a>
     </div>
   </section>
-
-  <section id="about">
-    <h2>About FALAHX</h2>
-    <p style="text-align:center; max-width: 800px; margin:auto;">FALAHX is a purpose-driven DeFi token built on the principles of fairness, transparency, and ethics. We’re building a future where the power belongs to the people, protected from bots, whales, and unethical manipulation. Your funds. Your future. Your FALAHX.</p>
-  </section>
-
-  <section id="tokenomics">
-    <h2>Tokenomics</h2>
-    <div class="cards">
-      <div class="card">🔒 37.5% Liquidity (Locked)</div>
-      <div class="card">📣 25% Marketing</div>
-      <div class="card">👥 15% Team (Locked)</div>
-      <div class="card">🌱 12.5% Reserves</div>
-      <div class="card">🔥 10% Burned</div>
-    </div>
-  </section>
-
-  <section id="roadmap">
-    <h2>Roadmap</h2>
-    <ul style="list-style: none; padding-left: 0; text-align:center;">
-      <li><strong>Phase 1</strong>: Token Launch, Website, Community Setup</li>
-      <li><strong>Phase 2</strong>: Liquidity Lock, Marketing Push</li>
-      <li><strong>Phase 3</strong>: DApp Utility, Staking Launch</li>
-      <li><strong>Phase 4</strong>: CEX Listings, Mobile App, Global Outreach</li>
-    </ul>
-  </section>
-
-  <section id="team">
-    <h2>Team</h2>
-    <p style="text-align:center; max-width: 800px; margin:auto;">A passionate group of developers, DeFi strategists, and crypto veterans. Faces will be revealed post-audit — trust, then transparency.</p>
-  </section>
-
-  <section id="faq">
-    <h2>FAQ</h2>
-    <div class="faq-item">
-      <div class="faq-q">What is FALAHX?</div>
-      <div class="faq-a">A BEP-20 token with anti-dump, cooldown, and burn mechanics.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Is liquidity locked?</div>
-      <div class="faq-a">Yes, via PinkLock. Trust is 🔐.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What are the taxes?</div>
-      <div class="faq-a">Buy: 0.5%, Sell: 1%, Auto-Burn: 0.2% — all adjustable.</div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact & Socials</h2>
-    <p style="text-align:center;">
-      📧 Email: contact@falahx.io<br>
-      💬 Telegram: @falahx<br>
-      🐦 Twitter: @falahx<br>
-      💻 GitHub: falahx
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 FALAHX. Built ethically, run by the community. No whales allowed.
-  </footer>
-
-  <script>
-    function connectWallet() {
-      if (window.ethereum) {
-        ethereum.request({ method: 'eth_requestAccounts' })
-          .then(accounts => alert('Connected: ' + accounts[0]))
-          .catch(() => alert('Connection failed.'));
-      } else {
-        alert('MetaMask not found. Please install it first.');
-      }
-    }
-
-    document.querySelectorAll('.faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const a = q.nextElementSibling;
-        a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';
-      });
-    });
-  </script>
 </body>
 </html>
