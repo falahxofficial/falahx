@@ -4,69 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FALAHX - The Future of Finance</title>
-  <meta name="description" content="FALAHX is a next-generation cryptocurrency focused on transparency, community, and innovation.">
-  <meta name="keywords" content="FALAHX, crypto, token, decentralized, blockchain">
-  <meta name="author" content="FALAHX Team">
   <link rel="icon" href="assets/logo/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body, html {
       margin: 0; padding: 0;
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
       background-color: #000;
-      color: white;
+      color: #fff;
     }
-
-    /* HERO SECTION */
+    .navbar-custom {
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .navbar-brand img {
+      height: 40px;
+    }
     .hero {
-      height: 100vh;
       position: relative;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 4rem;
+      height: 100vh;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-
     .hero video {
       position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -2;
     }
-
     .overlay {
       position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.6);
       z-index: -1;
     }
-
-    .hero-content {
-      text-align: center;
-      z-index: 1;
-    }
-
     .hero h1 {
       font-size: 4rem;
       font-weight: bold;
     }
-
     .hero h2 {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
     }
-
-    .btn-outline-light {
-      margin: 0.5rem;
-    }
-
     .scroll-down {
       position: absolute;
       bottom: 20px;
@@ -76,123 +66,51 @@
       animation: bounce 2s infinite;
       color: white;
     }
-
     @keyframes bounce {
       0%, 100% { transform: translate(-50%, 0); }
       50% { transform: translate(-50%, -10px); }
     }
-
-    /* NAVBAR */
-    .navbar-custom {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      z-index: 10;
-      background-color: rgba(0,0,0,0.4);
-      padding: 0.5rem 1.5rem;
-    }
-
-    .navbar-brand img {
-      height: 40px;
-    }
-
-    /* SECTIONS */
     section {
       padding: 4rem 2rem;
     }
-
     .section-title {
-      text-align: center;
       font-size: 2.5rem;
-      margin-bottom: 2rem;
+      text-align: center;
       font-weight: bold;
+      margin-bottom: 2rem;
     }
-
     .tokenomics-box {
       background: rgba(255,255,255,0.05);
       padding: 2rem;
       border-radius: 10px;
-      margin-bottom: 1rem;
+      max-width: 600px;
+      margin: auto;
     }
-
-    /* ROADMAP */
     .roadmap {
       position: relative;
+      max-width: 800px;
+      margin: auto;
     }
-
-    .roadmap:before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: white;
-      transform: translateX(-50%);
-    }
-
-    .roadmap-item {
+    .roadmap-step {
+      padding: 1.5rem;
+      border-left: 2px solid #fff;
       position: relative;
-      width: 50%;
-      padding: 1rem 2rem;
     }
-
-    .roadmap-item.left {
-      left: 0;
-      text-align: right;
-    }
-
-    .roadmap-item.right {
-      left: 50%;
-    }
-
-    .roadmap-item::before {
+    .roadmap-step::before {
       content: '';
-      position: absolute;
-      top: 1rem;
-      width: 15px;
-      height: 15px;
+      width: 12px; height: 12px;
       background: white;
       border-radius: 50%;
-      z-index: 1;
+      position: absolute;
+      left: -7px; top: 20px;
     }
-
-    .roadmap-item.left::before {
-      right: -8px;
-    }
-
-    .roadmap-item.right::before {
-      left: -8px;
-    }
-
-    @media(max-width: 767px) {
-      .roadmap:before { left: 20px; }
-      .roadmap-item { width: 100%; padding-left: 3rem; text-align: left; }
-      .roadmap-item.left, .roadmap-item.right { left: 0; }
-      .roadmap-item::before { left: 0; }
-    }
-
-    /* TEAM */
-    .team-member {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .team-member img {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-    }
-
-    /* FOOTER */
     footer {
       background: #111;
       padding: 2rem;
       text-align: center;
     }
-
     footer a {
-      color: white;
+      color: #ccc;
       margin: 0 10px;
     }
   </style>
@@ -200,98 +118,88 @@
 
 <body>
 
-  <!-- ✅ NAVBAR -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-    <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="FALAHX Logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
-        <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="#chart">Live Chart</a></li>
-        <li class="nav-item"><a class="nav-link" href="#connect">Wallet</a></li>
-      </ul>
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="FALAHX Logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+          <li class="nav-item"><a class="nav-link" href="#chart">Chart</a></li>
+          <li class="nav-item"><a class="nav-link" href="#wallet">Wallet</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- ✅ HERO SECTION -->
-  <section class="hero">
+  <!-- Hero -->
+  <section class="hero" id="home">
     <video autoplay muted loop playsinline>
       <source src="assets/media/hero-bg.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
-    <div class="hero-content">
+    <div class="text-white px-4">
       <h1>FALAHX</h1>
-      <h2>Decentralized. Transparent. Future-Proof.</h2>
-      <a href="whitepaper.pdf" class="btn btn-outline-light">Whitepaper</a>
-      <a href="#" class="btn btn-outline-light">Buy Now</a>
+      <h2>The Future of Decentralized Finance</h2>
+      <a href="#wallet" class="btn btn-outline-light m-2">Join Us</a>
+      <a href="whitepaper.pdf" class="btn btn-outline-light m-2" target="_blank">Whitepaper</a>
     </div>
     <div class="scroll-down">&#x25BC;</div>
   </section>
 
-  <!-- ✅ TOKENOMICS -->
+  <!-- Tokenomics -->
   <section id="tokenomics">
     <h2 class="section-title">Tokenomics</h2>
-    <div class="container">
-      <div class="tokenomics-box">
-        <p><strong>Total Supply:</strong> 10,000,000</p>
-        <p><strong>Decimals:</strong> 18</p>
-        <p><strong>Buy Tax:</strong> 0.5%</p>
-        <p><strong>Sell Tax:</strong> 1%</p>
-        <p><strong>Auto Burn:</strong> 0.2%</p>
-        <p><strong>Max Wallet:</strong> 2%</p>
-        <p><strong>Max TX:</strong> 1%</p>
-        <p><strong>Cooldown:</strong> 60 sec</p>
-      </div>
+    <div class="tokenomics-box">
+      <p><strong>Total Supply:</strong> 10,000,000</p>
+      <p><strong>Decimals:</strong> 18</p>
+      <p><strong>Buy Tax:</strong> 0.5%</p>
+      <p><strong>Sell Tax:</strong> 1%</p>
+      <p><strong>Auto Burn:</strong> 0.2%</p>
+      <p><strong>Cooldown:</strong> 60s</p>
+      <p><strong>Max Wallet:</strong> 2%</p>
+      <p><strong>Max TX:</strong> 1%</p>
     </div>
   </section>
 
-  <!-- ✅ ROADMAP -->
+  <!-- Roadmap -->
   <section id="roadmap">
     <h2 class="section-title">Roadmap</h2>
-    <div class="container roadmap">
-      <div class="roadmap-item left"><h5>Phase 1</h5><p>Token Launch + Website</p></div>
-      <div class="roadmap-item right"><h5>Phase 2</h5><p>Community Growth + Listing</p></div>
-      <div class="roadmap-item left"><h5>Phase 3</h5><p>Marketing + Partnerships</p></div>
-      <div class="roadmap-item right"><h5>Phase 4</h5><p>Audit + Staking + CEX Listings</p></div>
-    </div>
-  </section>
-
-  <!-- ✅ TEAM -->
-  <section id="team">
-    <h2 class="section-title">Meet the Team</h2>
-    <div class="container row justify-content-center">
-      <div class="col-md-3 team-member">
-        <img src="assets/images/team1.jpg" alt="Team 1">
-        <h5>Owais</h5>
-        <p>Founder & Dev</p>
+    <div class="roadmap">
+      <div class="roadmap-step">
+        <h5>Phase 1</h5>
+        <p>Token Launch & Website</p>
       </div>
-      <div class="col-md-3 team-member">
-        <img src="assets/images/team2.jpg" alt="Team 2">
-        <h5>Sarah</h5>
-        <p>Marketing Lead</p>
+      <div class="roadmap-step">
+        <h5>Phase 2</h5>
+        <p>Community Building + Listing</p>
       </div>
-      <div class="col-md-3 team-member">
-        <img src="assets/images/team3.jpg" alt="Team 3">
-        <h5>Ali</h5>
-        <p>Community Manager</p>
+      <div class="roadmap-step">
+        <h5>Phase 3</h5>
+        <p>Marketing + Staking + Audit</p>
+      </div>
+      <div class="roadmap-step">
+        <h5>Phase 4</h5>
+        <p>CEX Listings + DApps</p>
       </div>
     </div>
   </section>
 
-  <!-- ✅ LIVE CHART -->
+  <!-- Chart -->
   <section id="chart">
     <h2 class="section-title">Live Chart</h2>
-    <div class="container text-center">
-      <iframe src="https://www.dextools.io/widget-chart/en/bnb/pe-light/0xYourTokenAddressHere?theme=dark" width="100%" height="500" frameborder="0"></iframe>
+    <div class="text-center">
+      <iframe src="https://www.dextools.io/widget-chart/en/bnb/pe-light/0xYourTokenAddressHere?theme=dark"
+              width="100%" height="500" style="border: none;"></iframe>
     </div>
   </section>
 
-  <!-- ✅ WALLET CONNECT -->
-  <section id="connect">
+  <!-- Wallet Connect -->
+  <section id="wallet">
     <h2 class="section-title">Connect Wallet</h2>
     <div class="text-center">
       <button class="btn btn-outline-light" onclick="connectWallet()">Connect Wallet</button>
@@ -299,21 +207,22 @@
     </div>
   </section>
 
-  <!-- ✅ FOOTER -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 FALAHX. All rights reserved.</p>
-    <a href="https://twitter.com/" target="_blank">Twitter</a>
+    <p>&copy; 2025 FALAHX. All Rights Reserved.</p>
     <a href="https://t.me/" target="_blank">Telegram</a>
+    <a href="https://twitter.com/" target="_blank">Twitter</a>
     <a href="mailto:support@falahx.com">Email</a>
   </footer>
 
+  <!-- JS -->
   <script>
     async function connectWallet() {
       if (window.ethereum) {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        document.getElementById('wallet-address').innerText = "Connected: " + accounts[0];
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        document.getElementById("wallet-address").innerText = "Connected: " + accounts[0];
       } else {
-        alert("Install MetaMask to connect your wallet.");
+        alert("Please install MetaMask to connect your wallet.");
       }
     }
   </script>
