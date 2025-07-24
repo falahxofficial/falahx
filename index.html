@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FALAHX - The Future of Finance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FALAHX - Empower Your Future</title>
   <link rel="icon" href="assets/logo/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body, html {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
       background-color: #000;
@@ -19,34 +20,30 @@
       position: fixed;
       width: 100%;
       z-index: 999;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
     }
-    .navbar-brand img {
-      height: 40px;
-    }
+    .navbar-brand img { height: 40px; }
     .hero {
       position: relative;
       height: 100vh;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
     .hero video {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       z-index: -2;
     }
     .overlay {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.6);
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
     .hero h1 {
@@ -55,70 +52,56 @@
     }
     .hero h2 {
       font-size: 1.5rem;
-      margin-bottom: 1.5rem;
     }
     .scroll-down {
       position: absolute;
       bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
       font-size: 2rem;
       animation: bounce 2s infinite;
-      color: white;
     }
     @keyframes bounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -10px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
-    section {
-      padding: 4rem 2rem;
-    }
+    section { padding: 4rem 2rem; }
     .section-title {
-      font-size: 2.5rem;
       text-align: center;
+      font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 2rem;
     }
-    .tokenomics-box {
-      background: rgba(255,255,255,0.05);
+    .tokenomics-box, .features-box {
+      background: rgba(255, 255, 255, 0.05);
       padding: 2rem;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: auto;
-    }
-    .roadmap {
-      position: relative;
-      max-width: 800px;
+      border-radius: 12px;
+      max-width: 700px;
       margin: auto;
     }
     .roadmap-step {
-      padding: 1.5rem;
       border-left: 2px solid #fff;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
       position: relative;
     }
     .roadmap-step::before {
       content: '';
-      width: 12px; height: 12px;
-      background: white;
-      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      background: #fff;
       position: absolute;
-      left: -7px; top: 20px;
+      left: -7px;
+      top: 5px;
+      border-radius: 50%;
     }
     footer {
       background: #111;
-      padding: 2rem;
       text-align: center;
-    }
-    footer a {
-      color: #ccc;
-      margin: 0 10px;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container-fluid px-4">
       <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="FALAHX Logo"></a>
@@ -127,106 +110,114 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
           <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-          <li class="nav-item"><a class="nav-link" href="#chart">Chart</a></li>
           <li class="nav-item"><a class="nav-link" href="#wallet">Wallet</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero" id="home">
     <video autoplay muted loop playsinline>
       <source src="assets/media/hero-bg.mp4" type="video/mp4">
     </video>
     <div class="overlay"></div>
-    <div class="text-white px-4">
+    <div class="text-white px-3">
       <h1>FALAHX</h1>
-      <h2>The Future of Decentralized Finance</h2>
+      <h2>Empower Your Future Through DeFi Innovation</h2>
       <a href="#wallet" class="btn btn-outline-light m-2">Join Us</a>
       <a href="whitepaper.pdf" class="btn btn-outline-light m-2" target="_blank">Whitepaper</a>
     </div>
     <div class="scroll-down">&#x25BC;</div>
   </section>
 
-  <!-- Tokenomics -->
+  <section id="about">
+    <h2 class="section-title">About FALAHX</h2>
+    <div class="tokenomics-box">
+      <p>FALAHX is a next-gen BEP-20 token designed to disrupt traditional finance through automated, secure, and community-driven protocols. Built on the BNB Chain, FALAHX introduces smart transaction features like cooldown timers, anti-whale rules, auto-burn mechanisms, and low-tax incentives to maximize long-term growth while minimizing volatility.</p>
+    </div>
+  </section>
+
   <section id="tokenomics">
     <h2 class="section-title">Tokenomics</h2>
     <div class="tokenomics-box">
-      <p><strong>Total Supply:</strong> 10,000,000</p>
+      <p><strong>Total Supply:</strong> 10,000,000 FALAHX</p>
       <p><strong>Decimals:</strong> 18</p>
       <p><strong>Buy Tax:</strong> 0.5%</p>
       <p><strong>Sell Tax:</strong> 1%</p>
-      <p><strong>Auto Burn:</strong> 0.2%</p>
-      <p><strong>Cooldown:</strong> 60s</p>
-      <p><strong>Max Wallet:</strong> 2%</p>
-      <p><strong>Max TX:</strong> 1%</p>
+      <p><strong>Auto Burn:</strong> 0.2% of every transaction</p>
+      <p><strong>Cooldown Time:</strong> 60 seconds</p>
+      <p><strong>Max Wallet Limit:</strong> 2%</p>
+      <p><strong>Max Transaction Limit:</strong> 1%</p>
     </div>
   </section>
 
-  <!-- Roadmap -->
+  <section id="features">
+    <h2 class="section-title">Features</h2>
+    <div class="features-box">
+      <ul>
+        <li><strong>Anti-Whale:</strong> Limits on wallet and transaction size prevent market manipulation.</li>
+        <li><strong>Auto-Burn:</strong> 0.2% of each transaction is permanently burned, reducing supply.</li>
+        <li><strong>Cooldown Timer:</strong> 60-second delay to prevent rapid trades and bots.</li>
+        <li><strong>Adjustable Tax:</strong> Owner can adjust taxes to align with project needs.</li>
+        <li><strong>Bot Protection:</strong> Logic to restrict suspicious contracts and behavior.</li>
+        <li><strong>PinkLock Ready:</strong> Liquidity will be locked to build trust.</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="roadmap">
     <h2 class="section-title">Roadmap</h2>
-    <div class="roadmap">
+    <div class="tokenomics-box">
       <div class="roadmap-step">
         <h5>Phase 1</h5>
-        <p>Token Launch & Website</p>
+        <p>Token Deployment, Website Launch, Smart Contract Audit</p>
       </div>
       <div class="roadmap-step">
         <h5>Phase 2</h5>
-        <p>Community Building + Listing</p>
+        <p>Community Building, Listings, Marketing Campaigns</p>
       </div>
       <div class="roadmap-step">
         <h5>Phase 3</h5>
-        <p>Marketing + Staking + Audit</p>
+        <p>Staking Platform, Partnerships, DApp Integration</p>
       </div>
       <div class="roadmap-step">
         <h5>Phase 4</h5>
-        <p>CEX Listings + DApps</p>
+        <p>CEX Listings, DAO Governance, NFT Utility Launch</p>
       </div>
     </div>
   </section>
 
-  <!-- Chart -->
-  <section id="chart">
-    <h2 class="section-title">Live Chart</h2>
-    <div class="text-center">
-      <iframe src="https://www.dextools.io/widget-chart/en/bnb/pe-light/0xYourTokenAddressHere?theme=dark"
-              width="100%" height="500" style="border: none;"></iframe>
-    </div>
-  </section>
-
-  <!-- Wallet Connect -->
   <section id="wallet">
-    <h2 class="section-title">Connect Wallet</h2>
+    <h2 class="section-title">Connect Your Wallet</h2>
     <div class="text-center">
       <button class="btn btn-outline-light" onclick="connectWallet()">Connect Wallet</button>
       <p id="wallet-address" class="mt-3"></p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 FALAHX. All Rights Reserved.</p>
-    <a href="https://t.me/" target="_blank">Telegram</a>
-    <a href="https://twitter.com/" target="_blank">Twitter</a>
-    <a href="mailto:support@falahx.com">Email</a>
+    <p>&copy; 2025 FALAHX. All rights reserved.</p>
+    <p>
+      <a href="#home">Home</a> |
+      <a href="#tokenomics">Tokenomics</a> |
+      <a href="#wallet">Connect</a>
+    </p>
   </footer>
 
-  <!-- JS -->
   <script>
     async function connectWallet() {
       if (window.ethereum) {
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         document.getElementById("wallet-address").innerText = "Connected: " + accounts[0];
       } else {
-        alert("Please install MetaMask to connect your wallet.");
+        alert("MetaMask is not installed. Please install it to use this feature.");
       }
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
