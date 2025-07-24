@@ -7,6 +7,7 @@
   <link rel="icon" href="assets/logo/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
     body, html {
       margin: 0;
@@ -21,6 +22,7 @@
       width: 100%;
       z-index: 999;
       background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
     }
     .navbar-brand img { height: 40px; }
     .hero {
@@ -50,9 +52,6 @@
       font-size: 4rem;
       font-weight: bold;
     }
-    .hero h2 {
-      font-size: 1.5rem;
-    }
     .scroll-down {
       position: absolute;
       bottom: 20px;
@@ -63,17 +62,20 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    section { padding: 4rem 2rem; }
+    section {
+      padding: 4rem 2rem;
+    }
     .section-title {
       text-align: center;
       font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 2rem;
     }
-    .tokenomics-box, .features-box {
+    .glass {
       background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
+      backdrop-filter: blur(10px);
       border-radius: 12px;
+      padding: 2rem;
       max-width: 700px;
       margin: auto;
     }
@@ -93,14 +95,41 @@
       top: 5px;
       border-radius: 50%;
     }
+    .counter {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .floating-btns {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+    .floating-btns a {
+      background: #1da1f2;
+      color: white;
+      padding: 0.7rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+    }
     footer {
       background: #111;
       text-align: center;
       padding: 2rem 1rem;
     }
+    iframe.chart {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+    }
   </style>
 </head>
-
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container-fluid px-4">
@@ -126,76 +155,82 @@
     </video>
     <div class="overlay"></div>
     <div class="text-white px-3">
-      <h1>FALAHX</h1>
-      <h2>Empower Your Future Through DeFi Innovation</h2>
-      <a href="#wallet" class="btn btn-outline-light m-2">Join Us</a>
-      <a href="whitepaper.pdf" class="btn btn-outline-light m-2" target="_blank">Whitepaper</a>
+      <h1 data-aos="fade-down">FALAHX</h1>
+      <h2 data-aos="fade-up">Empower Your Future Through DeFi Innovation</h2>
+      <a href="#wallet" class="btn btn-outline-light m-2" data-aos="fade-up">Join Us</a>
+      <a href="whitepaper.pdf" class="btn btn-outline-light m-2" target="_blank" data-aos="fade-up">Whitepaper</a>
     </div>
     <div class="scroll-down">&#x25BC;</div>
   </section>
 
   <section id="about">
-    <h2 class="section-title">About FALAHX</h2>
-    <div class="tokenomics-box">
-      <p>FALAHX is a next-gen BEP-20 token designed to disrupt traditional finance through automated, secure, and community-driven protocols. Built on the BNB Chain, FALAHX introduces smart transaction features like cooldown timers, anti-whale rules, auto-burn mechanisms, and low-tax incentives to maximize long-term growth while minimizing volatility.</p>
+    <h2 class="section-title" data-aos="fade-up">About FALAHX</h2>
+    <div class="glass" data-aos="zoom-in">
+      <p>FALAHX is a next-gen BEP-20 token built to provide secure, automated, and community-powered DeFi solutions. It introduces intelligent trading rules to reduce manipulation and promote long-term value through cooldowns, burns, and anti-whale logic.</p>
     </div>
   </section>
 
   <section id="tokenomics">
-    <h2 class="section-title">Tokenomics</h2>
-    <div class="tokenomics-box">
-      <p><strong>Total Supply:</strong> 10,000,000 FALAHX</p>
-      <p><strong>Decimals:</strong> 18</p>
-      <p><strong>Buy Tax:</strong> 0.5%</p>
-      <p><strong>Sell Tax:</strong> 1%</p>
-      <p><strong>Auto Burn:</strong> 0.2% of every transaction</p>
-      <p><strong>Cooldown Time:</strong> 60 seconds</p>
-      <p><strong>Max Wallet Limit:</strong> 2%</p>
-      <p><strong>Max Transaction Limit:</strong> 1%</p>
+    <h2 class="section-title" data-aos="fade-up">Tokenomics</h2>
+    <div class="glass text-center" data-aos="fade-up">
+      <div class="row">
+        <div class="col-md-4 counter" data-target="10000000">0</div>
+        <div class="col-md-4 counter" data-target="0.5">0</div>
+        <div class="col-md-4 counter" data-target="1">0</div>
+      </div>
+      <p>Total Supply | Buy Tax | Sell Tax</p>
+      <p>Cooldown: 60s | Max Wallet: 2% | Max TX: 1% | Burn: 0.2%</p>
     </div>
   </section>
 
   <section id="features">
-    <h2 class="section-title">Features</h2>
-    <div class="features-box">
+    <h2 class="section-title" data-aos="fade-up">Features</h2>
+    <div class="glass" data-aos="fade-up">
       <ul>
-        <li><strong>Anti-Whale:</strong> Limits on wallet and transaction size prevent market manipulation.</li>
-        <li><strong>Auto-Burn:</strong> 0.2% of each transaction is permanently burned, reducing supply.</li>
-        <li><strong>Cooldown Timer:</strong> 60-second delay to prevent rapid trades and bots.</li>
-        <li><strong>Adjustable Tax:</strong> Owner can adjust taxes to align with project needs.</li>
-        <li><strong>Bot Protection:</strong> Logic to restrict suspicious contracts and behavior.</li>
-        <li><strong>PinkLock Ready:</strong> Liquidity will be locked to build trust.</li>
+        <li>🔒 Anti-Whale Protections</li>
+        <li>🔥 Auto-Burn System</li>
+        <li>⏱️ 60-Second Cooldown</li>
+        <li>🛡️ Bot Protection</li>
+        <li>📈 Dynamic Tax Control</li>
+        <li>💰 LP Locked with PinkLock</li>
       </ul>
     </div>
   </section>
 
   <section id="roadmap">
-    <h2 class="section-title">Roadmap</h2>
-    <div class="tokenomics-box">
+    <h2 class="section-title" data-aos="fade-up">Roadmap</h2>
+    <div class="glass" data-aos="fade-up">
       <div class="roadmap-step">
         <h5>Phase 1</h5>
-        <p>Token Deployment, Website Launch, Smart Contract Audit</p>
+        <p>Token Launch, Website Live, Community Onboarding</p>
       </div>
       <div class="roadmap-step">
         <h5>Phase 2</h5>
-        <p>Community Building, Listings, Marketing Campaigns</p>
+        <p>DEX Listings, Telegram & Twitter Campaigns</p>
       </div>
       <div class="roadmap-step">
         <h5>Phase 3</h5>
-        <p>Staking Platform, Partnerships, DApp Integration</p>
+        <p>Staking Integration, Utility DApp, CEX Outreach</p>
       </div>
       <div class="roadmap-step">
         <h5>Phase 4</h5>
-        <p>CEX Listings, DAO Governance, NFT Utility Launch</p>
+        <p>DAO, NFT Ecosystem, Partnership Expansions</p>
       </div>
     </div>
   </section>
 
   <section id="wallet">
-    <h2 class="section-title">Connect Your Wallet</h2>
+    <h2 class="section-title" data-aos="fade-up">Connect Your Wallet</h2>
     <div class="text-center">
       <button class="btn btn-outline-light" onclick="connectWallet()">Connect Wallet</button>
       <p id="wallet-address" class="mt-3"></p>
+    </div>
+    <div class="text-center mt-4">
+      <a href="#" class="btn btn-success">Buy on PancakeSwap</a>
+    </div>
+    <div class="glass mt-5" data-aos="fade-up">
+      <h4 class="text-center mb-3">Live Chart</h4>
+      <iframe class="chart" src="https://www.geckoterminal.com/bsc/pools" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -208,6 +243,11 @@
     </p>
   </footer>
 
+  <div class="floating-btns">
+    <a href="https://t.me/FALAHXCommunity" target="_blank">Telegram</a>
+    <a href="https://x.com/FALAHX" target="_blank">X (Twitter)</a>
+  </div>
+
   <script>
     async function connectWallet() {
       if (window.ethereum) {
@@ -217,7 +257,25 @@
         alert("MetaMask is not installed. Please install it to use this feature.");
       }
     }
+
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 100;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
